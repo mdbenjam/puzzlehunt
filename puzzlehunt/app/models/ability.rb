@@ -5,6 +5,7 @@ class Ability
 
   def initialize(user)
     can :read, Puzzle
+    can :read, :create, Answer
 
     return unless user.admin?
 
@@ -12,6 +13,7 @@ class Ability
     can :read, :dashboard
     can :manage, Puzzle
     can :manage, User
+    can :manage, Answer
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

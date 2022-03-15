@@ -1,2 +1,19 @@
-<h1>Puzzles#index</h1>
-<p>Find me in app/views/puzzles/index.html.erb</p>
+<h1>Puzzles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @puzzles.each do |puzzle| %>
+      <tr>
+        <td><%= link_to puzzle.title, puzzle_path(puzzle), method: "show" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
