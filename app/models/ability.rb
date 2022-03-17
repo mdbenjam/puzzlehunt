@@ -7,7 +7,7 @@ class Ability
     can :read, Puzzle
     can :read, :create, Answer
 
-    return unless user.admin?
+    return unless user && user.admin?
 
     can :manage, :rails_admin
     can :read, :dashboard

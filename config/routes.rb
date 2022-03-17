@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  get 'health', to: 'application#health'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
