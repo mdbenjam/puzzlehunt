@@ -1,6 +1,6 @@
 <div class="puzzle-container">
     <div class="puzzle-content">
-        <%= link_to "< Back to puzzles", puzzles_path %>
+        <%= link_to "< Back to puzzles", puzzle_hunt_path(@puzzle.puzzle_hunt) %>
         <h1><%= @puzzle.title %></h1>
 
         <% if @puzzle.solved?(current_user) %>

@@ -1,0 +1,15 @@
+<div class="puzzle-container">
+  <div class="puzzle-content">
+    <h1>Active Puzzle Hunts</h1>
+
+    <table>
+      <tbody>
+        <% @active_hunts.each do |puzzle_hunt| %>
+          <tr>
+            <td><%= link_to puzzle_hunt.name, puzzle_hunt_path(puzzle_hunt), method: "show" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

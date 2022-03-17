@@ -1,6 +1,7 @@
 class Puzzle < ApplicationRecord
   has_one_attached :content
   has_many :answers
+  belongs_to :puzzle_hunt
 
   def solved?(user)
     !!self.correct_answer(user)

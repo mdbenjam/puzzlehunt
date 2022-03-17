@@ -14,6 +14,7 @@ class Ability
     can :manage, Puzzle
     can :manage, User
     can :manage, Answer
+    can :manage, PuzzleHunt
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

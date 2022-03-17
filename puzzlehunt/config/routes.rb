@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :puzzle_hunts, only: [:index, :show]
+
   devise_for :users
   resources :puzzles, only: [:index, :show] do
     resources :answers, only: [:index, :create]
@@ -7,5 +9,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root to: "puzzles#index"
+  root to: "puzzle_hunts#index"
 end

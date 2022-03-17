@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_15_191320) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_17_171445) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -50,11 +50,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_15_191320) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
+  create_table "puzzle_hunts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "puzzles", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "correct_answer"
+    t.integer "puzzle_hunt_id"
+    t.index ["puzzle_hunt_id"], name: "index_puzzles_on_puzzle_hunt_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +84,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_15_191320) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "puzzles"
   add_foreign_key "answers", "users"
+  add_foreign_key "puzzles", "puzzle_hunts"
 end
