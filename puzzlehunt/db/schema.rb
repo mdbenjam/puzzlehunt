@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_17_171445) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_17_173033) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_17_171445) do
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "points_to_win", default: 0, null: false
   end
 
   create_table "puzzles", force: :cascade do |t|
@@ -64,6 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_17_171445) do
     t.datetime "updated_at", null: false
     t.string "correct_answer"
     t.integer "puzzle_hunt_id"
+    t.integer "points_to_unlock", default: 0, null: false
+    t.integer "points_for_solve", default: 1, null: false
     t.index ["puzzle_hunt_id"], name: "index_puzzles_on_puzzle_hunt_id"
   end
 

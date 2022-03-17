@@ -1,6 +1,10 @@
 <div class="puzzle-container">
   <div class="puzzle-content">
-    <h1>Puzzles</h1>
+    <h1><%= @puzzle_hunt.name %></h1>
+    <% if @puzzle_hunt.completed_hunt(current_user) %>
+      <h2>You finished in <%= @puzzle_hunt.completed_hunt(current_user).ordinalize %> place</h2>
+    <% end %>
+    
 
     <table>
       <thead>
@@ -11,7 +15,7 @@
       </thead>
 
       <tbody>
-        <% @puzzles.each do |puzzle| %>
+        <% @unlocked_puzzles.each do |puzzle| %>
           <tr>
             <td><%= link_to puzzle.title, puzzle_path(puzzle), method: "show" %></td>
             <td><%= puzzle.solved?(current_user) ? puzzle.correct_answer(current_user) : "---" %></td>

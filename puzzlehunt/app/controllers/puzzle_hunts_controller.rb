@@ -7,6 +7,6 @@ class PuzzleHuntsController < ApplicationController
 
   def show
     @puzzle_hunt = PuzzleHunt.find(params[:id])
-    @puzzles = @puzzle_hunt.puzzles
+    @unlocked_puzzles = @puzzle_hunt.unlocked_puzzles(current_user)
   end
 end

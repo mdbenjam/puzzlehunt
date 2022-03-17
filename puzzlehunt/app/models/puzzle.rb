@@ -8,6 +8,6 @@ class Puzzle < ApplicationRecord
   end
 
   def correct_answer(user)
-    self.answers.where(user: user, correct: true).first.text.upcase
+    self.answers.where(user: user, correct: true).first&.text&.upcase
   end
 end
