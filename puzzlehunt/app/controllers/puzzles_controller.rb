@@ -7,8 +7,6 @@ class PuzzlesController < ApplicationController
   def show
     @puzzle = Puzzle.find(params[:id])
     @answers = @puzzle.answers.where(user: current_user)
-    for answer in @answers
-      print("answer: " + answer.text)
-    end
+    
   end
 end

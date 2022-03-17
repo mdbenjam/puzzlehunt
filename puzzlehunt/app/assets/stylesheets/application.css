@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: rgb(32, 17, 102);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+td {
+  padding: 10px 20px;
+  border: 1px solid gray;
+}
+
+.puzzle-container {
+  display: flex;
+  justify-content: center;
+}
+.puzzle-content {
+  max-width: 1200px;
+  min-width: 800px;
+  background-color: white;
+  border: 1px solid gray;
+  margin: 50px;
+  padding: 50px;
+}
+
+iframe {
+  border: 1px solid black;
+}
