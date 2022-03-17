@@ -9,6 +9,7 @@ services:
     name: puzzlehunt_prod
     env: ruby
     plan: free
+    healthCheckPath: /health
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     branch: deploying-on-render
