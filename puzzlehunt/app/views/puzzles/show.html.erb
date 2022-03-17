@@ -25,7 +25,7 @@
         </ul>
 
         <div class="puzzle-container">
-            <iframe src=<%= url_for(@puzzle.content) %> width="600" height="780"> </iframe>
+            <iframe src=<%= show_content_puzzle_path(@puzzle) %> width="600" height="780"> </iframe>
         </div>
     </div>
 </div>

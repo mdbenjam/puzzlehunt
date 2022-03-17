@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :puzzles, only: [:show] do
+    get :show_content, on: :member
+    get '*file' => :show_content, :on => :member
     resources :answers, only: %i[index create]
   end
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
