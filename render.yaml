@@ -9,8 +9,8 @@ services:
     name: puzzlehunt_prod
     env: ruby
     plan: free
-    buildCommand: "cd puzzlehunt; ../bin/render-build.sh"
-    startCommand: "cd puzzlehunt; bundle exec puma -C config/puma.rb"
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
     branch: deploying-on-render
     envVars:
       - key: DATABASE_URL
