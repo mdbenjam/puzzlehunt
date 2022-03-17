@@ -1,0 +1,21 @@
+databases:
+  - name: puzzlehunt_postgres
+    databaseName: puzzlehunt_postgres # optional (Render may add a suffix)
+    user: puzzlehunt # optional
+    plan: free
+
+services:
+  - type: web
+    name: puzzlehunt_prod
+    env: ruby
+    plan: free
+    buildCommand: "cd puzzlehunt; ../bin/render-build.sh"
+    startCommand: "cd puzzlehunt; bundle exec puma -C config/puma.rb"
+    branch: deploying-on-render
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: puzzlehunt_postgres
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
