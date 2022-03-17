@@ -18,5 +18,7 @@ services:
         fromDatabase:
           name: puzzlehunt_postgres
           property: connectionString
+      - key: RAILS_ENV
+        value: production
       - key: RAILS_MASTER_KEY
         sync: false
