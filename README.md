@@ -15,7 +15,7 @@ This is a very basic puzzle hunt server with the following features:
 
 You can deploy this on whatever platform you want, but I've included a [Render blueprint file](https://render.com/docs/blueprint-spec). By clicking the button below you should be able to automatically deploy this repo on Render!
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/mdbenjam/puzzlehunt)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/mdbenjam/puzzlehunt/tree/main)
 
 Everything should work except for file uploads. For that we use S3. You'll need to create an AWS account. Then create an S3 bucket called `puzzlehunt`. And create an IAM user with read/write access to that bucket. Get the credentials for that user and set them as environment variables in your server's render environment. The env vars should be called: `ACCESS_KEY_ID` and `SECRET_ACCESS_KEY`.
 
