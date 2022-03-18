@@ -3,7 +3,7 @@
 
 <% if @puzzle.solved?(current_user) %>
     <h2>You solved the puzzle!</h2>
-    <p>The answer is: <%= @puzzle.correct_answer(current_user) %></p>
+    <p>The answer is: <%= @puzzle.correct_answer %></p>
 <% else %>
     <%= form_with url: "/puzzles/#{@puzzle.id}/answers", method: :post do |form| %>
     <%= form.label :answer, "Answer:" %>
