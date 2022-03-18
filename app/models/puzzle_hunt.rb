@@ -41,7 +41,7 @@ class PuzzleHunt < ApplicationRecord
         index = sorted_users.find_index { |arr| arr[0] == current_user.id }
 
         # If there's no completed time stamp then the user hasn't finished
-        sorted_users[index][1].nil? ? nil : index + 1
+        (index.nil? || sorted_users[index][1].nil?) ? nil : index + 1
       end
   end
 end
