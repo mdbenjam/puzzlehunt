@@ -36,7 +36,7 @@ class PuzzleHunt < ApplicationRecord
           end.to_h
 
         sorted_users =
-          users_completed.sort_by { |user_id, timestamp| timestamp || -1 }
+          users_completed.sort_by { |user_id, timestamp| timestamp || Time.zone.local(1, 1, 1, 00, 00, 00) }
 
         index = sorted_users.find_index { |arr| arr[0] == current_user.id }
 
